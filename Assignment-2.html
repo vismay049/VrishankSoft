@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>College Event Information</title>
+
+<style>
+:root {
+    --glass: rgba(255, 255, 255, 0.12);
+    --accent: #00e6ff;
+    --accent-soft: #8b5cf6;
+    --text-main: #ffffff;
+    --text-muted: #cfd8dc;
+}
+
+/* ---------- RESET ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- DARK BLUE + PURPLE ANIMATED BACKGROUND ---------- */
+body {
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    background: linear-gradient(
+        120deg,
+        #020617,
+        #081a3a,
+        #2b1c4f,
+        #001b3f
+    );
+    background-size: 600% 600%;
+    animation: bluePurpleFlow 12s ease-in-out infinite;
+}
+
+@keyframes bluePurpleFlow {
+    0%   { background-position: 0% 50%; }
+    25%  { background-position: 50% 100%; }
+    50%  { background-position: 100% 50%; }
+    75%  { background-position: 50% 0%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---------- TOP NAVIGATION (PDF REQUIRED) ---------- */
+.nav-wrapper {
+    margin: 25px auto 40px;
+    display: flex;
+    justify-content: center;
+}
+
+nav {
+    background: var(--glass);
+    backdrop-filter: blur(20px) saturate(190%);
+    padding: 16px 42px;
+    border-radius: 40px;
+    box-shadow: 0 25px 55px rgba(0,0,0,0.5);
+    display: flex;
+    gap: 32px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ---------- LINK STATES ---------- */
+a:link { color: var(--accent); }
+a:visited { color: #b39ddb; }
+a:hover { color: var(--accent-soft); }
+a:active { color: #ff5252; }
+
+/* ---------- HEADER ---------- */
+header {
+    padding: 40px 20px 50px;
+    text-align: center;
+}
+
+/* ---------- NEON TITLE ---------- */
+header h1 {
+    font-family: "Segoe UI", "Arial Black", Arial, sans-serif;
+    font-size: 3.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #e6faff;
+    text-shadow:
+        0 0 6px var(--accent),
+        0 0 14px var(--accent),
+        0 0 28px var(--accent-soft),
+        0 0 42px rgba(139, 92, 246, 0.8);
+    animation: neonPulse 3s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+    0%,100% {
+        text-shadow:
+            0 0 6px var(--accent),
+            0 0 14px var(--accent),
+            0 0 28px var(--accent-soft),
+            0 0 42px rgba(139, 92, 246, 0.8);
+    }
+    50% {
+        text-shadow:
+            0 0 12px var(--accent),
+            0 0 26px var(--accent),
+            0 0 46px var(--accent-soft),
+            0 0 64px rgba(139, 92, 246, 1);
+    }
+}
+
+header p {
+    margin-top: 18px;
+    color: var(--text-muted);
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ---------- MAIN EVENT IMAGE (PDF REQUIRED) ---------- */
+.main-image {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.main-image img {
+    width: 85%;
+    max-width: 900px;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px;
+    background: var(--glass);
+    backdrop-filter: blur(16px);
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent);
+    padding-left: 12px;
+}
+
+/* ---------- GALLERY ---------- */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 260px;
+    height: 180px;
+    border-radius: 14px;
+}
+
+/* ---------- CONTACT ACTION AREA ---------- */
+.action-area {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* ---------- BUTTONS ---------- */
+.button-link {
+    padding: 14px 30px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-soft));
+    color: #041014 !important;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+button {
+    padding: 14px 30px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    background: var(--accent);
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    text-align: center;
+    padding: 26px;
+    color: var(--text-muted);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION AT TOP (PDF COMPLIANT) -->
+<div class="nav-wrapper">
+    <nav>
+        <a href="#details">Event Details</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact Information</a>
+    </nav>
+</div>
+
+<header>
+    <h1>Annual Tech Fusion 2026</h1>
+    <p>
+        A campus-wide celebration bringing together academics, cultural programs,
+        competitions, workshops, exhibitions, and collaborative student activities.
+    </p>
+
+    <!-- REQUIRED MAIN IMAGE -->
+    <div class="main-image">
+        <img 
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475"
+            alt="College Event"
+            width="900"
+            height="320"
+        >
+    </div>
+</header>
+
+<section id="details">
+    <h2>Event Details</h2>
+    <p>
+        <strong>Annual Tech Fusion 2026</strong> is a college-level event designed
+        to encourage participation, creativity, teamwork, and student engagement
+        across all departments.
+    </p>
+
+    <p>
+        External reference:
+        <a href="https://www.ieee.org" target="_blank" title="IEEE Official Website">
+            IEEE Global Organization
+        </a>
+    </p>
+
+    <p>
+        Related internal page:
+        <a href="previous-events.html">Previous Events Archive</a>
+    </p>
+</section>
+
+<section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+        <a href="https://www.google.com" target="_blank">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475"
+                 alt="Coding Session" width="260" height="180">
+        </a>
+
+        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+             alt="Workshop Session" width="260" height="180">
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Information</h2>
+    <p>
+        Email:
+        <a href="mailto:event@college.edu">event@college.edu</a>
+    </p>
+
+    <div class="action-area">
+        <button onclick="location.href='registration.html'">
+            Register for Event
+        </button>
+
+        <a href="https://www.college.edu" target="_blank" class="button-link">
+            Visit College Website
+        </a>
+    </div>
+</section>
+
+<footer>
+    © 2026 College Committee
+</footer>
+
+</body>
+</html>
