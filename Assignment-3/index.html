@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Digital Addiction Awareness</title>
+
+<style>
+
+/* ---------------- BACKGROUND IMAGE ---------------- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+}
+
+/* Overlay for readability */
+.overlay {
+    background-color: rgba(0,0,0,0.7);
+    padding: 30px;
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #00ffff;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    color: #00ffff;
+}
+
+/* Paragraph Styling */
+p {
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* ---------------- MAIN IMAGE (REDUCED SIZE) ---------------- */
+.main-image {
+    display: block;
+    margin: 20px auto;
+    width: 550px;          /* Reduced size */
+    max-width: 100%;
+    height: auto;
+    border: 4px solid white;
+}
+
+/* Responsive Section */
+.responsive-section {
+    text-align: center;
+    margin-top: 40px;
+}
+
+</style>
+
+<script>
+function showMessage(message) {
+    alert(message);
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="overlay">
+
+<h1>Digital Addiction – A Modern Day Challenge</h1>
+
+<p>
+Digital addiction is the excessive use of smartphones, social media, gaming,
+and online platforms that negatively affects physical health, mental well-being,
+and productivity. Continuous exposure to screens can lead to sleep disorders,
+reduced concentration, anxiety, and social isolation.
+</p>
+
+<p>
+Click on different areas of the image below to understand various impacts
+of digital addiction.
+</p>
+
+<!-- ---------------- IMAGE MAP ---------------- -->
+
+<img src="https://images.unsplash.com/photo-1510519138101-570d1dca3d66"
+     usemap="#digitalmap"
+     class="main-image"
+     alt="Digital Addiction Image">
+
+<map name="digitalmap">
+
+    <!-- Rectangle -->
+    <area shape="rect"
+          coords="50,50,200,200"
+          href="#"
+          onclick="showMessage('Excessive Mobile Usage reduces productivity and disturbs sleep patterns.')">
+
+    <!-- Circle -->
+    <area shape="circle"
+          coords="350,150,80"
+          href="#"
+          onclick="showMessage('Social Media Overuse can cause anxiety and mental stress.')">
+
+    <!-- Polygon -->
+    <area shape="poly"
+          coords="500,300,650,300,700,400,550,450"
+          href="#"
+          onclick="showMessage('Gaming Addiction affects academic and professional performance.')">
+
+</map>
+
+<!-- ---------------- RESPONSIVE IMAGE USING <picture> ---------------- -->
+
+<div class="responsive-section">
+
+<h2>Responsive Awareness Image</h2>
+
+<p>This image changes based on screen width using the &lt;picture&gt; element.</p>
+
+<picture>
+    <source media="(max-width: 600px)" 
+            srcset="https://images.unsplash.com/photo-1492724441997-5dc865305da7">
+
+    <source media="(max-width: 1000px)" 
+            srcset="https://images.unsplash.com/photo-1518779578993-ec3579fee39f">
+
+    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+         alt="Responsive Digital Image"
+         style="width:550px; max-width:100%; height:auto; border:3px solid white;">
+</picture>
+
+</div>
+
+</div>
+
+</body>
+</html>
