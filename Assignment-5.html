@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Computer Science Department Portal</title>
+
+<style>
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BACKGROUND IMAGE ===== */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Background image with blur */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("college.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px);
+    z-index: -1;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2 {
+    text-align: center;
+    color: #154360;
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: #117864;
+    margin-top: 20px;
+}
+
+/* Center paragraph text */
+.center-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ===== NAVIGATION ===== */
+ul.nav {
+    list-style: none;
+    background-color: #1a5276;
+    text-align: center;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+ul.nav li {
+    display: inline-block;
+}
+
+ul.nav li a {
+    color: white;
+    padding: 14px 22px;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul.nav li a:hover {
+    background-color: #48c9b0;
+    color: #154360;
+}
+
+/* ===== TABLES ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: white;
+}
+
+caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+th {
+    background-color: #aed6f1;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #aaa;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #d6eaf8;
+}
+
+/* ===== TIMETABLE ===== */
+.timetable td:nth-child(even) {
+    background-color: #fdebd0;
+}
+
+/* ===== FACILITIES STRUCTURE ===== */
+.facilities {
+    margin-top: 15px;
+}
+
+.facility-list {
+    margin-left: 40px;
+    list-style-type: disc;
+}
+
+.facility-list li {
+    margin-bottom: 6px;
+}
+
+/* Laboratory rules */
+.lab-rules {
+    margin-left: 40px;
+}
+
+.lab-rules > li {
+    margin-bottom: 8px;
+}
+
+.lab-rules ol {
+    margin-left: 30px;
+    margin-top: 6px;
+}
+
+/* Key terms */
+.key-terms {
+    margin-left: 40px;
+}
+
+.key-terms dt {
+    font-weight: bold;
+    color: #1f618d;
+    margin-top: 10px;
+}
+
+.key-terms dd {
+    margin-left: 20px;
+    margin-bottom: 8px;
+}
+
+/* ===== CONTACT ===== */
+.contact {
+    text-align: center;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- NAVIGATION -->
+<ul class="nav">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#faculty">Faculty</a></li>
+    <li><a href="#timetable">Timetable</a></li>
+    <li><a href="#facilities">Facilities</a></li>
+    <li><a href="#contact">Contact</a></li>
+</ul>
+
+<!-- HOME -->
+<h1 id="home">Department of Computer Science</h1>
+<p class="center-text">
+The Computer Science Department offers quality education in computing,
+software development, and emerging technologies with a strong practical focus.
+</p>
+
+<!-- FACULTY -->
+<h2 id="faculty">Faculty Details</h2>
+<table>
+<caption>Faculty Information</caption>
+<tr>
+<th>Faculty Name</th>
+<th>Designation</th>
+<th>Subject Handled</th>
+<th>Experience</th>
+</tr>
+<tr>
+<td>Dr. Anil Kumar</td>
+<td>Professor</td>
+<td>Data Structures</td>
+<td>15 Years</td>
+</tr>
+<tr>
+<td>Ms. Sneha Rao</td>
+<td>Assistant Professor</td>
+<td>Operating Systems</td>
+<td>8 Years</td>
+</tr>
+<tr>
+<td>Mr. Ravi Shetty</td>
+<td>Lecturer</td>
+<td>Web Technologies</td>
+<td>5 Years</td>
+</tr>
+</table>
+
+<!-- TIMETABLE -->
+<h2 id="timetable">Weekly Class Timetable</h2>
+<table class="timetable">
+<colgroup>
+<col style="background-color:#d5f5e3;">
+<col>
+<col style="background-color:#fdebd0;">
+<col>
+<col style="background-color:#d6eaf8;">
+</colgroup>
+
+<tr>
+<th>Day</th>
+<th>9–10</th>
+<th>10–11</th>
+<th>11–12</th>
+<th>12–1</th>
+</tr>
+
+<tr>
+<td>Monday</td>
+<td>DS</td>
+<td>OS</td>
+<td colspan="2">Programming Lab</td>
+</tr>
+
+<tr>
+<td>Tuesday</td>
+<td>WT</td>
+<td>DS</td>
+<td>OS</td>
+<td>Library</td>
+</tr>
+
+<tr>
+<td>Wednesday</td>
+<td rowspan="2">Mini Project</td>
+<td>WT</td>
+<td>DS</td>
+<td>Sports</td>
+</tr>
+
+<tr>
+<td>Thursday</td>
+<td colspan="2">Seminar</td>
+<td>Mentoring</td>
+</tr>
+
+<tr>
+<td>Friday</td>
+<td>OS</td>
+<td>WT</td>
+<td>DS</td>
+<td>Club Activity</td>
+</tr>
+</table>
+
+<!-- FACILITIES -->
+<h2 id="facilities">Facilities & Resources</h2>
+<div class="facilities">
+
+<h3>General Facilities</h3>
+<ul class="facility-list">
+    <li>Smart Classrooms</li>
+    <li>High-Speed Internet</li>
+    <li>Advanced Computer Labs</li>
+    <li>Department Library</li>
+    <li>Research Center</li>
+    <li>Project Rooms</li>
+</ul>
+
+<h3>Laboratory Rules</h3>
+<ol type="A" class="lab-rules">
+    <li>Maintain discipline</li>
+    <li>Follow safety instructions</li>
+    <li>No food items allowed
+        <ol type="i">
+            <li>Water bottles allowed</li>
+            <li>No snacks permitted</li>
+        </ol>
+    </li>
+</ol>
+
+<h3>Key Terms</h3>
+<dl class="key-terms">
+    <dt>Data Structures</dt>
+    <dd>Techniques to organize data efficiently.</dd>
+
+    <dt>Operating System</dt>
+    <dd>Manages system hardware and software.</dd>
+
+    <dt>Web Technologies</dt>
+    <dd>Used to build web applications.</dd>
+</dl>
+
+</div>
+
+<!-- CONTACT -->
+<h2 id="contact">Contact Information</h2>
+<p class="contact">
+Email: csdepartment@college.edu<br>
+Phone: +91 98765 43210
+</p>
+
+</div>
+
+</body>
+</html>
