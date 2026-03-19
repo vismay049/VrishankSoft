@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online College Admission Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #eef2ff, #f8fbff);
+            margin: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        fieldset {
+            margin-bottom: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dbeafe;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #1e3a8a;
+            padding: 0 10px;
+        }
+
+        label {
+            display: inline-block;
+            width: 230px;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            padding: 6px;
+            border-radius: 5px;
+            border: 1px solid #cbd5e1;
+            margin-top: 8px;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        /* BUTTON SECTION IMPROVED */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .buttons input {
+            padding: 10px 18px;
+            border-radius: 6px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .buttons input[type="submit"] {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        .buttons input[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+
+        .buttons input[type="reset"] {
+            background-color: #f59e0b;
+            color: white;
+        }
+
+        .buttons input[type="reset"]:hover {
+            background-color: #d97706;
+        }
+
+        .buttons input[type="button"] {
+            background-color: #6b7280;
+            color: white;
+        }
+
+        .buttons input[type="button"]:hover {
+            background-color: #4b5563;
+        }
+
+        .info {
+            background-color: #e0ecff;
+            padding: 20px;
+            border-left: 5px solid #1e3a8a;
+            border-radius: 6px;
+        }
+
+        h3 {
+            color: #1e3a8a;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Online Admission Registration Form</h1>
+
+<p class="description">
+    Please complete this form carefully to apply for admission into your preferred college program.
+</p>
+
+<form action="/submit_admission.php" method="POST" target="_blank" autocomplete="on">
+
+    <input type="hidden" name="application_id" value="APP2026">
+
+    <fieldset>
+        <legend>Student Personal Details</legend>
+
+        <label>Full Name:</label>
+        <input type="text" required><br>
+
+        <label>Create Password:</label>
+        <input type="password" required><br>
+
+        <label>Email ID:</label>
+        <input type="email" required><br>
+
+        <label>Mobile Number:</label>
+        <input type="tel"><br>
+
+        <label>Date of Birth:</label>
+        <input type="date"><br>
+
+        <label>12th Percentage:</label>
+        <input type="number" min="0" max="100"><br>
+
+        <label>Favorite Color:</label>
+        <input type="color"><br>
+
+        <label>Upload Documents:</label>
+        <input type="file"><br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Course Selection</legend>
+
+        <label>Gender:</label>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female<br>
+
+        <label>Hobbies:</label>
+        <input type="checkbox"> Sports
+        <input type="checkbox"> Music
+        <input type="checkbox"> Reading<br>
+
+        <label>Select Course:</label>
+        <select>
+            <optgroup label="Computer Science Department">
+                <option>BCA</option>
+                <option>B.Sc Computer Science</option>
+            </optgroup>
+            <optgroup label="Commerce Department">
+                <option>B.Com</option>
+                <option>BBA</option>
+            </optgroup>
+        </select><br>
+
+        <label>Search Course:</label>
+        <input type="search"><br>
+
+        <label>City:</label>
+        <input list="cities">
+        <datalist id="cities">
+            <option value="Mangalore">
+            <option value="Udupi">
+            <option value="Bangalore">
+            <option value="Mysore">
+        </datalist><br>
+
+        <label>LinkedIn Profile:</label>
+        <input type="url"><br>
+
+        <label>Communication Skill (1–10):</label>
+        <input type="range" min="1" max="10"><br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Additional Form Elements</legend>
+
+        <label>Address:</label>
+        <textarea rows="3" cols="40"></textarea><br>
+
+        <label>Entrance Marks (Math + Science):</label>
+        <input type="number" id="m1"
+        oninput="result.value=parseInt(m1.value||0)+parseInt(m2.value||0)">
+        +
+        <input type="number" id="m2"
+        oninput="result.value=parseInt(m1.value||0)+parseInt(m2.value||0)">
+        =
+        <output name="result"></output><br>
+
+        <button type="button" style="margin-top:10px;padding:8px 15px;background:#10b981;color:white;border:none;border-radius:6px;cursor:pointer;">
+            Custom Button
+        </button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Date & Time Inputs</legend>
+
+        <label>Preferred Time:</label>
+        <input type="time"><br>
+
+        <label>Preferred Week:</label>
+        <input type="week"><br>
+
+        <label>Preferred Month:</label>
+        <input type="month"><br>
+
+        <label>Interview Date & Time:</label>
+        <input type="datetime-local"><br>
+    </fieldset>
+
+    <div class="buttons">
+        <input type="submit" value="Submit Application">
+        <input type="reset" value="Reset Form">
+        <input type="button" value="Simple Button">
+    </div>
+
+</form>
+
+<form novalidate>
+    <h3>Sample Form with novalidate</h3>
+    <label>Email:</label>
+    <input type="email">
+    <input type="submit" value="Submit Without Validation">
+</form>
+
+<div class="info">
+    <h3>Difference Between GET and POST</h3>
+    <p>
+        GET method sends data through the URL and is visible in the browser address bar.
+        It is used mainly for retrieving data and has size limitations.
+        POST method sends data in the request body, making it more secure.
+        POST is preferred for admission forms because it protects sensitive
+        information such as passwords and personal details.
+    </p>
+</div>
+
+</body>
+</html>
