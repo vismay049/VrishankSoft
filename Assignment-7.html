@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Online Event Registration & Feedback System</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,#1e3c72,#2a5298);
+    margin:0;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    color:white;
+    margin-bottom:30px;
+}
+
+form{
+    background:white;
+    padding:30px;
+    max-width:900px;
+    margin:auto;
+    border-radius:12px;
+    box-shadow:0 0 25px rgba(0,0,0,0.3);
+}
+
+fieldset{
+    margin-bottom:25px;
+    padding:20px;
+    border-radius:10px;
+    border:2px solid #2a5298;
+}
+
+legend{
+    font-weight:bold;
+    color:#1e3c72;
+    padding:0 10px;
+    font-size:18px;
+}
+
+label{
+    display:block;
+    margin-top:12px;
+    font-weight:bold;
+}
+
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-top:6px;
+    border-radius:6px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
+}
+
+textarea{
+    resize:vertical;
+}
+
+.radio-group, .checkbox-group{
+    margin-top:10px;
+}
+
+.radio-group label,
+.checkbox-group label{
+    display:inline-block;
+    margin-right:20px;
+    font-weight:normal;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:20px;
+    flex-wrap:wrap;
+}
+
+.buttons input,
+.buttons button{
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:14px;
+    transition:0.3s ease;
+    height:45px;
+}
+
+/* Submit Button */
+input[type="submit"]{
+    background:#28a745;
+    color:white;
+}
+input[type="submit"]:hover{
+    background:#218838;
+}
+
+/* Reset Button */
+input[type="reset"]{
+    background:#dc3545;
+    color:white;
+}
+input[type="reset"]:hover{
+    background:#c82333;
+}
+
+/* Alert Button */
+button{
+    background:#ffc107;
+}
+button:hover{
+    background:#e0a800;
+}
+
+/* Image Submit Button */
+.image-btn{
+    height:45px;
+    width:140px;
+    border-radius:8px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Online Technical Event Registration</h1>
+
+<form action="" method="POST" autocomplete="on" target="_self">
+
+<!-- SECTION 1 -->
+<fieldset>
+<legend>Participant Basic Details</legend>
+
+<input type="hidden" name="registration_id" value="REG12345">
+
+<label for="fullname">Full Name</label>
+<input type="text" id="fullname" name="fullname" required>
+
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" required>
+
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone"
+pattern="[0-9]{10}"
+placeholder="Enter 10 digit number"
+required>
+
+<label for="dob">Date of Birth</label>
+<input type="date" id="dob" name="dob"
+min="1995-01-01"
+max="2010-12-31"
+required>
+
+<label for="contacttime">Preferred Contact Time</label>
+<input type="time" id="contacttime" name="contacttime" required>
+
+<label for="idcard">Upload Student ID Card</label>
+<input type="file" id="idcard" name="idcard" required>
+
+</fieldset>
+
+<!-- SECTION 2 -->
+<fieldset>
+<legend>Event Selection</legend>
+
+<label>Select Event Category</label>
+<div class="radio-group">
+<label><input type="radio" name="category" value="Web_Development" required> Web Development</label>
+<label><input type="radio" name="category" value="AI_ML"> AI & ML</label>
+<label><input type="radio" name="category" value="Cyber_Security"> Cyber Security</label>
+<label><input type="radio" name="category" value="Cloud_Computing"> Cloud Computing</label>
+</div>
+
+<label>Select Workshops Interested In</label>
+<div class="checkbox-group">
+<label><input type="checkbox" name="workshop" value="HTML_CSS"> HTML & CSS</label>
+<label><input type="checkbox" name="workshop" value="JavaScript"> JavaScript</label>
+<label><input type="checkbox" name="workshop" value="Python"> Python Programming</label>
+<label><input type="checkbox" name="workshop" value="Data_Science"> Data Science</label>
+<label><input type="checkbox" name="workshop" value="Ethical_Hacking"> Ethical Hacking</label>
+</div>
+
+</fieldset>
+
+<!-- SECTION 3 -->
+<fieldset>
+<legend>Schedule & Availability</legend>
+
+<label for="month">Preferred Month</label>
+<input type="month" id="month" name="month" required>
+
+<label for="datetime">Preferred Date & Time</label>
+<input type="datetime-local" id="datetime" name="datetime" required>
+
+<label for="week">Week Availability</label>
+<input type="week" id="week" name="week" required>
+
+</fieldset>
+
+<!-- SECTION 4 -->
+<fieldset>
+<legend>Experience & Preferences</legend>
+
+<label for="experience">Years of Experience</label>
+<input type="number" id="experience" name="experience"
+min="0" max="10" required>
+
+<label for="confidence">Skill Confidence Level (0–10)</label>
+<input type="range" id="confidence" name="confidence"
+min="0" max="10">
+
+<label for="color">Favorite Theme Color</label>
+<input type="color" id="color" name="color">
+
+<label for="search">Search Event Topics</label>
+<input type="search" id="search" name="search">
+
+</fieldset>
+
+<!-- SECTION 5 -->
+<fieldset>
+<legend>Additional Information</legend>
+
+<label for="feedback">Short Feedback / Message</label>
+<textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+<label for="resume">Upload Resume</label>
+<input type="file" id="resume" name="resume" required>
+
+<label for="portfolio">Provide Portfolio Link (Optional)</label>
+<input type="url" id="portfolio" name="portfolio">
+
+</fieldset>
+
+<!-- SECTION 6 -->
+<fieldset>
+<legend>Payment Section</legend>
+
+<label for="tickets">Quantity of Tickets (1–5)</label>
+<input type="number" id="tickets" name="tickets"
+min="1" max="5" required>
+
+<div class="buttons">
+
+<input type="image" 
+src="https://dummyimage.com/140x45/007bff/ffffff&text=Pay+Now"
+alt="Pay Now"
+class="image-btn">
+
+<input type="submit" value="Register Now">
+
+<input type="reset" value="Reset Form">
+
+<button type="button"
+onclick="alert('Thank you for exploring our event registration system!')">
+Info
+</button>
+
+</div>
+
+</fieldset>
+
+</form>
+
+</body>
+</html>
