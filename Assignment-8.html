@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Job Application Portal</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #dbeafe, #f0f9ff);
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+        }
+
+        form {
+            background: white;
+            padding: 25px;
+            max-width: 900px;
+            margin: auto;
+            border-radius: 12px;
+            box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+        }
+
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #1e40af;
+            padding: 0 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* Normal Inputs */
+        input:not([type="radio"]):not([type="checkbox"]):not([type="image"]),
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        /* Radio & Checkbox inline */
+        .inline {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="submit"],
+        input[type="reset"],
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        input[type="submit"] {
+            background-color: #2563eb;
+            color: white;
+        }
+
+        input[type="reset"] {
+            background-color: #dc2626;
+            color: white;
+        }
+
+        button {
+            background-color: #16a34a;
+            color: white;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1d4ed8;
+        }
+
+        input[type="reset"]:hover {
+            background-color: #b91c1c;
+        }
+
+        button:hover {
+            background-color: #15803d;
+        }
+
+        /* Image Button Fixed */
+        input[type="image"] {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            margin-top: 15px;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<h1>Smart Job Application Portal</h1>
+
+<form action="submit.php" method="POST" autocomplete="on">
+
+<!-- SECTION 1 -->
+<fieldset>
+<legend>Candidate Basic Information</legend>
+
+<label for="fullname">Full Name</label>
+<input type="text" id="fullname" name="fullname"
+placeholder="Enter your full name"
+maxlength="30"
+size="30"
+autofocus
+required>
+
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email"
+required autocomplete="off">
+
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone"
+placeholder="9876543210"
+pattern="[0-9]{10}"
+title="Enter 10 digit mobile number">
+
+<label>Portfolio Website</label>
+<input type="url" name="portfolio">
+
+<label>Date of Birth</label>
+<input type="date" name="dob"
+min="1990-01-01"
+max="2007-12-31">
+
+<label>Available Interview Week</label>
+<input type="week" name="interviewweek">
+
+<label>Preferred Interview Date & Time</label>
+<input type="datetime-local" name="interviewdatetime">
+
+<label>Preferred Contact Time</label>
+<input type="time" name="contacttime">
+
+</fieldset>
+
+<!-- SECTION 2 -->
+<fieldset>
+<legend>Job Selection</legend>
+
+<p><b>Select Job Role:</b></p>
+
+<input type="radio" name="jobrole" value="Software Developer" required class="inline"> Software Developer<br>
+<input type="radio" name="jobrole" value="UI/UX Designer" class="inline"> UI/UX Designer<br>
+<input type="radio" name="jobrole" value="Data Analyst" class="inline"> Data Analyst<br>
+<input type="radio" name="jobrole" value="Cyber Security Engineer" class="inline"> Cyber Security Engineer<br>
+
+<p><b>Technical Skills:</b></p>
+
+<input type="checkbox" name="skills" value="HTML" class="inline"> HTML
+<input type="checkbox" name="skills" value="CSS" class="inline"> CSS
+<input type="checkbox" name="skills" value="JavaScript" class="inline"> JavaScript
+<input type="checkbox" name="skills" value="Python" class="inline"> Python
+<input type="checkbox" name="skills" value="SQL" class="inline"> SQL
+<input type="checkbox" name="skills" value="Cloud Computing" class="inline"> Cloud Computing
+
+</fieldset>
+
+<!-- SECTION 3 -->
+<fieldset>
+<legend>Professional Details</legend>
+
+<label>Years of Experience</label>
+<input type="number" name="experience"
+min="0" max="20" step="1">
+
+<label>Expected Salary</label>
+<input type="number" name="salary"
+step="5000">
+
+<label>Skill Proficiency Level (0–10)</label>
+<input type="range" name="proficiency"
+min="0" max="10">
+
+<label>Preferred Work Location</label>
+<input list="locations" name="location">
+<datalist id="locations">
+<option value="Bangalore">
+<option value="Hyderabad">
+<option value="Chennai">
+<option value="Pune">
+</datalist>
+
+<label>Favorite Theme Color</label>
+<input type="color" name="theme">
+
+<label>Search Job Code</label>
+<input type="search" name="jobcode">
+
+</fieldset>
+
+<!-- SECTION 4 -->
+<fieldset>
+<legend>Document Upload</legend>
+
+<label>Upload Resume</label>
+<input type="file" name="resume" required>
+
+<label>Upload Certificates</label>
+<input type="file" name="certificates" multiple>
+
+</fieldset>
+
+<!-- SECTION 5 -->
+<fieldset>
+<legend>System Controlled Fields</legend>
+
+<label>Application ID</label>
+<input type="text" name="app_id"
+value="APP2026001"
+readonly>
+
+<input type="hidden" name="internal_code" value="INT12345">
+
+<label>HR Review Status</label>
+<input type="text" value="Pending" disabled>
+
+</fieldset>
+
+<!-- SECTION 6 -->
+<fieldset>
+<legend>Feedback Section</legend>
+
+<label>Why should we hire you?</label>
+<textarea name="feedback" rows="4" cols="50"></textarea>
+
+<label>Country Code (3 Letters)</label>
+<input type="text" name="countrycode"
+pattern="[A-Za-z]{3}"
+title="Enter exactly 3 letters">
+
+</fieldset>
+
+<!-- SECTION 7 -->
+<fieldset>
+<legend>Payment & Submission</legend>
+
+<label>Number of Interview Slots (1–5)</label>
+<input type="number" name="slots"
+min="1" max="5">
+
+<div class="button-group">
+<input type="submit" value="Submit Application">
+<input type="reset" value="Reset Form">
+<button type="button" onclick="alert('Processing Payment...')">Pay Now</button>
+
+<input type="image"
+src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png"
+height="60" width="60">
+</div>
+
+</fieldset>
+
+</form>
+
+</body>
+</html>
