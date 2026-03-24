@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart University Admission Portal</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right,#e3f2fd,#ffffff);
+    margin:0;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    color:#0d47a1;
+    margin-bottom:20px;
+}
+
+form{
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+fieldset{
+    margin-bottom:20px;
+    padding:15px;
+    border-radius:8px;
+    border:1px solid #90caf9;
+}
+
+legend{
+    font-weight:bold;
+    color:#0d47a1;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+    font-weight:500;
+}
+
+input:not([type=radio]):not([type=checkbox]):not([type=image]),
+select,
+textarea{
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+input[type=radio],
+input[type=checkbox]{
+    width:auto;
+    margin-right:5px;
+}
+
+textarea{
+    resize:vertical;
+}
+
+output{
+    font-weight:bold;
+    font-size:16px;
+    color:#d32f2f;
+}
+
+/* BUTTON SECTION FIXED */
+.buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+button{
+    padding:10px 25px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:14px;
+    color:white;
+}
+
+button[type=button]{
+    background:#43a047;
+}
+
+button[type=submit]{
+    background:#1976d2;
+}
+
+button[type=reset]{
+    background:#e53935;
+}
+
+input[type=image]{
+    height:45px;
+    width:45px;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Smart University Admission & Course Registration Portal</h1>
+
+<form oninput="total.value=parseInt(courseFee.value||0)+parseInt(hostelFee.value||0)">
+
+<!-- SECTION 1 -->
+<fieldset>
+<legend>Student Details</legend>
+
+<label>Full Name</label>
+<input type="text" placeholder="Enter full name"
+maxlength="50" required autofocus>
+
+<label>Email</label>
+<input type="email" required autocomplete="off">
+
+<label>Phone Number</label>
+<input type="tel" pattern="[0-9]{10}"
+title="Enter 10 digit phone number"
+placeholder="9876543210">
+
+<label>Date of Birth</label>
+<input type="date" min="1995-01-01" max="2010-12-31">
+
+<label>Gender</label>
+<input type="radio" name="gender" value="Male" required> Male
+<input type="radio" name="gender" value="Female"> Female
+<input type="radio" name="gender" value="Other"> Other
+
+<label>Upload Passport Photo</label>
+<input type="file">
+
+<label>Application ID</label>
+<input type="text" value="UNI2025-001" readonly>
+
+<input type="hidden" value="INTCODE123">
+</fieldset>
+
+<!-- SECTION 2 -->
+<fieldset>
+<legend>Course Details</legend>
+
+<label>Select Degree Program</label>
+<select required>
+<option value="">--Select--</option>
+<option>B.Tech</option>
+<option>BCA</option>
+<option>B.Sc</option>
+<option>MBA</option>
+</select>
+
+<label>Specialization</label>
+<select>
+<optgroup label="Science">
+<option>Computer Science</option>
+<option>Data Science</option>
+</optgroup>
+<optgroup label="Management">
+<option>Finance</option>
+<option>Marketing</option>
+</optgroup>
+</select>
+
+<label>Elective Subjects</label>
+<select multiple size="3">
+<option>AI</option>
+<option>Cyber Security</option>
+<option>Cloud Computing</option>
+<option disabled>Robotics (Unavailable)</option>
+</select>
+
+<label>Preferred Campus Location</label>
+<input list="campus">
+<datalist id="campus">
+<option value="Bangalore">
+<option value="Mysore">
+<option value="Mangalore">
+<option value="Hubli">
+</datalist>
+</fieldset>
+
+<!-- SECTION 3 -->
+<fieldset>
+<legend>Academic & Experience Details</legend>
+
+<label>12th Percentage</label>
+<input type="number" min="0" max="100" step="0.1">
+
+<label>Entrance Exam Score</label>
+<input type="number">
+
+<label>Passing Month</label>
+<input type="month">
+
+<label>Preferred Admission Week</label>
+<input type="week">
+
+<label>Preferred Interview Date & Time</label>
+<input type="datetime-local">
+
+<label>Study Hours Per Day</label>
+<input type="range" min="0" max="12">
+</fieldset>
+
+<!-- SECTION 4 -->
+<fieldset>
+<legend>Hostel & Transport</legend>
+
+<label>Require Hostel?</label>
+<input type="radio" name="hostel" value="Yes"> Yes
+<input type="radio" name="hostel" value="No"> No
+
+<label>Room Type</label>
+<input type="checkbox"> AC
+<input type="checkbox"> Non-AC
+<input type="checkbox"> Sharing
+
+<label>Bus Route Selection</label>
+<select>
+<option>Route A</option>
+<option>Route B</option>
+<option>Route C</option>
+</select>
+
+<label>Favorite Room Color</label>
+<input type="color">
+</fieldset>
+
+<!-- SECTION 5 -->
+<fieldset>
+<legend>Additional Information</legend>
+
+<label>Why do you want to join this university?</label>
+<textarea rows="4" cols="50"></textarea>
+
+<label>Upload Marksheet</label>
+<input type="file">
+
+<label>Upload Certificates</label>
+<input type="file" multiple>
+
+<label>Personal Website / Portfolio</label>
+<input type="url" placeholder="https://example.com">
+</fieldset>
+
+<!-- SECTION 6 -->
+<fieldset>
+<legend>Fee Calculation</legend>
+
+<label>Course Fee</label>
+<input type="number" id="courseFee" value="50000">
+
+<label>Hostel Fee</label>
+<input type="number" id="hostelFee" value="20000">
+
+<label>Total Fee</label>
+<output name="total">70000</output>
+</fieldset>
+
+<!-- SECTION 7 -->
+<div class="buttons">
+<button type="button">Preview</button>
+<button type="submit">Submit Application</button>
+<button type="reset">Reset</button>
+
+<input type="image"
+src="data:image/svg+xml;utf8,
+<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50'>
+<rect width='50' height='50' rx='8' ry='8' fill='%231976d2'/>
+<text x='50%' y='55%' font-size='14' fill='white'
+text-anchor='middle' font-family='Arial' dy='.3em'>Go</text>
+</svg>"
+height="45"
+width="45"
+alt="Submit">
+</div>
+
+</form>
+
+</body>
+</html>
