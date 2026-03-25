@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Smart City Tourism Portal - Udupi</title>
+
+<meta charset="UTF-8">
+<meta name="description" content="Smart City Tourism Portal for Udupi">
+<meta name="keywords" content="Udupi, Tourism, Krishna Mutt, Malpe Beach">
+<meta name="author" content="Your Name">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<base target="_blank">
+
+<style>
+
+/* ===== COLOR PALETTE =====
+Primary Dark: #0d3b66
+Accent: #f4a261
+Light Background: #f1faee
+Section Heading: #e76f51
+Text Dark: #1d3557
+========================== */
+
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#0d3b66,#1d3557,#457b9d);
+    color:#1d3557;
+}
+
+/* HEADER */
+header{
+    background:#0d3b66;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+}
+
+/* NAVIGATION */
+nav{
+    background:#1d3557;
+    text-align:center;
+    padding:15px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 20px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#f4a261;
+}
+
+/* FULL WIDTH BANNER */
+.banner-section{
+    width:100%;
+}
+
+canvas{
+    width:100%;
+    height:200px;
+    display:block;
+}
+
+/* MAIN LAYOUT */
+.main-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:30px;
+    padding:30px;
+    max-width:1200px;
+    margin:auto;
+}
+
+section{
+    flex:3;
+}
+
+aside{
+    flex:1;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* SECTION HEADINGS */
+h2{
+    color:#e76f51;
+    border-bottom:3px solid #f4a261;
+    padding-bottom:8px;
+}
+
+/* ARTICLES */
+article{
+    background:white;
+    padding:25px;
+    margin-bottom:25px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* ATTRACTIONS GRID */
+.attractions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.place{
+    flex:1 1 45%;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.place:hover{
+    transform:translateY(-5px);
+}
+
+.place img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.place h3{
+    padding:10px 15px 0;
+    color:#0d3b66;
+}
+
+.place p{
+    padding:0 15px 15px;
+}
+
+/* IFRAME */
+iframe{
+    width:100%;
+    height:350px;
+    border:none;
+    border-radius:12px;
+    margin-top:15px;
+}
+
+/* SIDEBAR HEADINGS */
+aside h3{
+    color:#0d3b66;
+    border-bottom:2px solid #f4a261;
+    padding-bottom:5px;
+}
+
+/* FOOTER */
+footer{
+    background:#0d3b66;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .main-container{
+        flex-direction:column;
+    }
+    .place{
+        flex:1 1 100%;
+    }
+}
+
+</style>
+
+<script>
+window.onload=function(){
+    var canvas=document.getElementById("cityCanvas");
+    var ctx=canvas.getContext("2d");
+
+    canvas.width=window.innerWidth;
+    canvas.height=200;
+
+    var gradient=ctx.createLinearGradient(0,0,canvas.width,0);
+    gradient.addColorStop(0,"#f4a261");
+    gradient.addColorStop(1,"#e76f51");
+
+    ctx.fillStyle=gradient;
+    ctx.fillRect(0,0,canvas.width,200);
+
+    ctx.fillStyle="white";
+    ctx.font="bold 48px Segoe UI";
+    ctx.textAlign="center";
+    ctx.fillText("Welcome to Smart Udupi",canvas.width/2,120);
+};
+</script>
+
+</head>
+<body>
+
+<header>
+<h1>Udupi Smart City</h1>
+<p>Explore Culture • Heritage • Beaches</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#attractions">Attractions</a>
+<a href="#map">Map</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="banner-section">
+<canvas id="cityCanvas"></canvas>
+</div>
+
+<div class="main-container">
+
+<section>
+
+<section id="home">
+<article>
+<h2>About Udupi</h2>
+<p>Udupi is a coastal city in Karnataka famous for Sri Krishna Mutt and Malpe Beach.</p>
+</article>
+</section>
+
+<section id="attractions">
+<h2>Tourist Attractions</h2>
+
+<div class="attractions">
+
+<article class="place">
+<img src="krishna.jpg" alt="Krishna Mutt">
+<h3>Krishna Mutt Temple</h3>
+<p>Historic temple established by Sri Madhvacharya and a major pilgrimage destination.</p>
+</article>
+
+<article class="place">
+<img src="beach.jpg" alt="Malpe Beach">
+<h3>Malpe Beach</h3>
+<p>Popular coastal destination known for water sports and sunset views.</p>
+</article>
+
+</div>
+</section>
+
+<section>
+<h2>Tourism Video</h2>
+<iframe src="https://www.youtube.com/embed/E8zlzsV98yI"
+allowfullscreen></iframe>
+</section>
+
+<section id="map">
+<h2>Explore Locations</h2>
+<iframe src="https://www.google.com/maps?q=Udupi&output=embed"></iframe>
+</section>
+
+</section>
+
+<!-- UPDATED SIDEBAR -->
+<aside>
+
+<h3>About Krishna Mutt</h3>
+<p>
+Krishna Mutt is one of the most sacred pilgrimage sites in South India,
+founded by Sri Madhvacharya in the 13th century. The temple is famous for
+the unique Kanakana Kindi window through which devotees view Lord Krishna.
+Daily rituals and festivals attract thousands of devotees every year.
+</p>
+
+<h3>About Malpe Beach</h3>
+<p>
+Malpe Beach is a scenic coastal destination offering boating, water sports,
+and breathtaking sunset views. It is one of the cleanest beaches in Karnataka
+and serves as a gateway to St. Mary’s Island.
+</p>
+
+<h3>Top Nearby Places to Visit</h3>
+
+<p><strong>St. Mary's Island</strong><br>
+Famous for rare hexagonal basalt rock formations and crystal-clear waters.</p>
+
+<p><strong>Kaup Beach & Lighthouse</strong><br>
+Offers panoramic sea views from the historic lighthouse tower.</p>
+
+<p><strong>Manipal</strong><br>
+A vibrant educational hub known for Manipal Lake, museums, and parks.</p>
+
+<p><strong>Kodi Beach</strong><br>
+A peaceful beach ideal for relaxing walks and photography.</p>
+
+<p><strong>Anantheshwara Temple</strong><br>
+An ancient temple dedicated to Lord Shiva near Krishna Mutt.</p>
+
+<p><strong>Hasta Shilpa Heritage Village</strong><br>
+An architectural museum showcasing traditional Karnataka homes.</p>
+
+<p><strong>Delta Beach</strong><br>
+A serene confluence point where the river meets the Arabian Sea.</p>
+
+<p><strong>Maravanthe Beach</strong><br>
+One of India’s most scenic highways where the road runs between river and sea.</p>
+
+<h3>Local Cuisine</h3>
+<p>
+Udupi is globally famous for its vegetarian cuisine. Must-try dishes include:
+Masala Dosa, Goli Baje, Sambar, Rasam, and traditional Udupi Thali.
+</p>
+
+<h3>Best Time to Visit</h3>
+<p>
+October to March is the best season to explore Udupi due to pleasant weather.
+Monsoon season offers lush greenery but heavy rainfall.
+</p>
+
+<h3>Travel Tips</h3>
+<p>
+• Dress modestly when visiting temples.<br>
+• Carry sunscreen for beach visits.<br>
+• Early morning is ideal for temple darshan.<br>
+• Try local restaurants for authentic Udupi meals.
+</p>
+
+<h3>Emergency Contacts</h3>
+<p>
+Police: 100<br>
+Ambulance: 108<br>
+Tourism Helpdesk: 1800-425-1234<br>
+Railway Enquiry: 139
+</p>
+
+</aside>
+
+
+</div>
+
+<footer id="contact">
+<p>© 2026 Udupi Smart City Portal</p>
+<p>Email: info@udupi.com</p>
+</footer>
+
+</body>
+</html>
