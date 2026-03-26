@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Digital Cultural Fest 2026 | College Event Portal</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Official Digital Cultural Fest 2026 Portal">
+    <meta name="keywords" content="Cultural Fest 2026, College Events, Dance, Drama, Coding">
+    <meta name="author" content="Web Developer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+
+        /* HEADER */
+        .main-header {
+            background: linear-gradient(90deg, #4f46e5, #ec4899);
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+        }
+
+        .header-text h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        .header-text h2 {
+            margin: 5px 0;
+            font-size: 20px;
+            font-weight: normal;
+        }
+
+        .tagline {
+            font-style: italic;
+        }
+
+        /* NAV */
+        nav {
+            background: #111827;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #ec4899;
+        }
+
+        /* CANVAS */
+        canvas {
+            width: 100%;
+            height: 250px;
+            border: 3px solid #4f46e5;
+            display: block;
+        }
+
+        /* LAYOUT */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        main {
+            flex: 70%;
+            padding: 20px;
+        }
+
+        aside {
+            flex: 30%;
+            background: #e5e7eb;
+            padding: 20px;
+        }
+
+        section, article {
+            background: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        iframe {
+            width: 100%;
+        }
+
+        @media(max-width:768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <!-- Canvas Script -->
+    <script>
+        window.onload = function() {
+            var canvas = document.getElementById("welcomeCanvas");
+            canvas.width = window.innerWidth - 40;
+            canvas.height = 250;
+
+            var ctx = canvas.getContext("2d");
+
+            var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+            gradient.addColorStop(0, "#4f46e5");
+            gradient.addColorStop(1, "#ec4899");
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "rgba(255,255,255,0.2)";
+            ctx.fillRect(50, 60, canvas.width - 100, 120);
+
+            ctx.beginPath();
+            ctx.arc(canvas.width - 120, 125, 50, 0, 2 * Math.PI);
+            ctx.fillStyle = "rgba(255,255,255,0.3)";
+            ctx.fill();
+
+            ctx.fillStyle = "white";
+            ctx.font = "bold 32px Arial";
+            ctx.textAlign = "center";
+            ctx.fillText("Welcome to Digital Cultural Fest 2026", canvas.width / 2, 140);
+        };
+    </script>
+</head>
+
+<body>
+
+<header class="main-header">
+    <div class="header-content">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="logo" alt="Logo">
+        <div class="header-text">
+            <h1>Digital Cultural Fest 2026</h1>
+            <h2>ABC College of Engineering</h2>
+            <p class="tagline">Celebrating Talent & Innovation</p>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="#promo">Promo</a>
+    <a href="#highlight">Highlights</a>
+    <a href="#events">Events</a>
+</nav>
+
+<section>
+    <canvas id="welcomeCanvas"></canvas>
+</section>
+
+<div class="container">
+<main>
+
+<section id="promo">
+    <h2>Event Promo Video</h2>
+    <iframe height="400"
+        src="https://www.youtube.com/embed/CVCJNsdYBNc?autoplay=1&mute=1"
+        title="Promo Video"
+        allow="autoplay"
+        allowfullscreen>
+    </iframe>
+</section>
+
+<section id="highlight">
+    <h2>Fest Highlight Video</h2>
+
+    <iframe 
+        width="100%" 
+        height="400"
+        src="https://www.youtube.com/embed/Hd777zSNQVQ
+"
+        title="Fest Highlight Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+    </iframe>
+
+</section>
+<section id="music">
+    <h2>Background Music</h2>
+
+    <audio controls style="width:100%;">
+        <source src="faaa.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+</section>
+
+
+
+
+
+<section id="events">
+    <h2>Events</h2>
+
+    <article>
+        <h3>Dance Competition</h3>
+        <img src="https://images.unsplash.com/photo-1515168833906-d2a3b82b302a">
+        <p>Date: March 10, 2026 | 10 AM</p>
+    </article>
+
+    <article>
+        <h3>Singing Competition</h3>
+        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d">
+        <p>Date: March 10, 2026 | 2 PM</p>
+    </article>
+
+    <article>
+        <h3>Drama</h3>
+        <img src="https://images.unsplash.com/photo-1503095396549-807759245b35">
+        <p>Date: March 11, 2026 | 11 AM</p>
+    </article>
+
+    <article>
+        <h3>Coding Event</h3>
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+        <p>Date: March 11, 2026 | 3 PM</p>
+    </article>
+</section>
+
+</main>
+
+<aside>
+    <h3>Sponsors</h3>
+    <p>TechCorp Pvt Ltd</p>
+    <p>CodeMasters</p>
+
+    <h3>Contact</h3>
+    <p>9876543210</p>
+
+    <h3>Register</h3>
+    <a href="#">Click Here</a>
+</aside>
+</div>
+
+<footer>
+    <p>© 2026 Digital Cultural Fest</p>
+    <p>Email: fest@college.com</p>
+    <p>Address: City, India</p>
+</footer>
+
+</body>
+</html>
