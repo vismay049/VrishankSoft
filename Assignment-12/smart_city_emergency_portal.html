@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Emergency & City Service Portal</title>
+
+<style>
+:root{
+    --primary:#0f172a;
+    --secondary:#1e293b;
+    --accent:#06b6d4;
+    --light:#f1f5f9;
+    --danger:#ef4444;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+}
+
+/* HEADER */
+header{
+    padding:25px;
+    text-align:center;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+
+header h1{
+    font-size:28px;
+    letter-spacing:1px;
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:15px;
+    background:rgba(255,255,255,0.03);
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--accent);
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:white;
+}
+
+/* LAYOUT */
+.container{
+    display:grid;
+    grid-template-columns:3fr 1fr;
+    gap:25px;
+    padding:30px;
+}
+
+/* CARD STYLE */
+article, aside{
+    background:rgba(255,255,255,0.08);
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4);
+    margin-bottom:25px;
+    transition:0.3s;
+}
+
+article:hover{
+    transform:translateY(-5px);
+}
+
+h2{
+    margin-bottom:15px;
+    color:var(--accent);
+}
+
+/* BUTTONS */
+button{
+    padding:10px 16px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    margin:5px 5px 5px 0;
+    background:var(--accent);
+    color:black;
+    transition:0.3s;
+}
+
+button:hover{
+    background:white;
+}
+
+/* INPUTS */
+input, select{
+    padding:8px;
+    border-radius:8px;
+    border:none;
+    margin-bottom:10px;
+    width:100%;
+}
+
+/* DRAG ITEMS */
+.drag-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.drag-item{
+    padding:12px;
+    background:var(--secondary);
+    border-radius:10px;
+    cursor:grab;
+    text-align:center;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.drag-item:hover{
+    background:var(--accent);
+    color:black;
+}
+
+#dropZone{
+    margin-top:15px;
+    min-height:120px;
+    border:2px dashed var(--accent);
+    border-radius:10px;
+    padding:15px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* ASIDE */
+aside h3{
+    margin-bottom:10px;
+    color:var(--accent);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    background:rgba(255,255,255,0.05);
+    margin-top:20px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .container{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🚨 Smart Emergency & City Service Portal</h1>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Emergency</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</nav>
+
+<section class="container">
+
+<main>
+
+<!-- GEOLOCATION -->
+<article>
+<h2>📍 Find My Current Location</h2>
+<button onclick="getLocation()">Detect My Location</button>
+<p id="locationResult"></p>
+</article>
+
+<!-- DRAG & DROP -->
+<article>
+<h2>🚑 Emergency Service Priority Board</h2>
+
+<div class="drag-container">
+<div class="drag-item" draggable="true" ondragstart="drag(event)" id="ambulance">🚑 Ambulance</div>
+<div class="drag-item" draggable="true" ondragstart="drag(event)" id="police">🚓 Police</div>
+<div class="drag-item" draggable="true" ondragstart="drag(event)" id="fire">🔥 Fire Department</div>
+<div class="drag-item" draggable="true" ondragstart="drag(event)" id="hospital">🏥 Hospital</div>
+</div>
+
+<div id="dropZone" ondrop="drop(event)" ondragover="allowDrop(event)">
+Drop High Priority Services Here
+</div>
+</article>
+
+<!-- WEB STORAGE -->
+<article>
+<h2>💾 Save My Preferences</h2>
+
+<input type="text" id="username" placeholder="Enter Your Name">
+
+<select id="serviceSelect">
+<option>Ambulance</option>
+<option>Police</option>
+<option>Fire Department</option>
+<option>Hospital</option>
+</select>
+
+<button onclick="saveData()">Save</button>
+<button onclick="removeData()">Remove Saved Name</button>
+
+<p id="savedUser"></p>
+
+<button onclick="increaseCounter()">Emergency Help</button>
+<p>Session Emergency Click Count: <span id="sessionCount">0</span></p>
+</article>
+
+<!-- WEB WORKER -->
+<article>
+<h2>⚙ Emergency Alert Counter</h2>
+
+<button onclick="startWorker()">Start Worker</button>
+<button onclick="stopWorker()">Stop Worker</button>
+
+<p>Counter: <output id="workerOutput">0</output></p>
+</article>
+
+</main>
+
+<aside>
+<h3>📞 Emergency Contacts</h3>
+<p>Police: 100</p>
+<p>Ambulance: 108</p>
+<p>Fire: 101</p>
+<p>Municipal Helpline: 1800-000-111</p>
+</aside>
+
+</section>
+
+<footer>
+© 2026 Smart City Emergency Portal | All Rights Reserved
+</footer>
+
+<script>
+// GEOLOCATION
+function getLocation(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        document.getElementById("locationResult").innerHTML="Geolocation not supported.";
+    }
+}
+
+function showPosition(position){
+    document.getElementById("locationResult").innerHTML=
+    "Latitude: "+position.coords.latitude+"<br>"+
+    "Longitude: "+position.coords.longitude+"<br>"+
+    "Accuracy: "+position.coords.accuracy+" meters<br>"+
+    "Timestamp: "+new Date(position.timestamp);
+}
+
+function showError(error){
+    let msg="";
+    switch(error.code){
+        case error.PERMISSION_DENIED:
+            msg="Permission denied.";
+            break;
+        case error.POSITION_UNAVAILABLE:
+            msg="Position unavailable.";
+            break;
+        case error.TIMEOUT:
+            msg="Request timeout.";
+            break;
+        default:
+            msg="Unknown error.";
+    }
+    document.getElementById("locationResult").innerHTML=msg;
+}
+
+// DRAG & DROP
+function allowDrop(e){ e.preventDefault(); }
+
+function drag(e){ e.dataTransfer.setData("text", e.target.id); }
+
+function drop(e){
+    e.preventDefault();
+    let data=e.dataTransfer.getData("text");
+    e.target.appendChild(document.getElementById(data));
+}
+
+// STORAGE
+window.onload=function(){
+    let saved=localStorage.getItem("username");
+    if(saved){
+        document.getElementById("savedUser").innerHTML="Welcome back, "+saved;
+    }
+
+    let count=sessionStorage.getItem("clickCount");
+    if(count){
+        document.getElementById("sessionCount").innerText=count;
+    }
+}
+
+function saveData(){
+    let name=document.getElementById("username").value;
+    localStorage.setItem("username",name);
+    document.getElementById("savedUser").innerHTML="Saved User: "+name;
+}
+
+function removeData(){
+    localStorage.removeItem("username");
+    document.getElementById("savedUser").innerHTML="Saved data removed.";
+}
+
+function increaseCounter(){
+    let count=sessionStorage.getItem("clickCount")||0;
+    count++;
+    sessionStorage.setItem("clickCount",count);
+    document.getElementById("sessionCount").innerText=count;
+}
+
+// WEB WORKER
+    let worker;
+
+function startWorker(){
+    if(typeof(Worker)!=="undefined"){
+        if(typeof(worker)=="undefined"){
+            worker=new Worker("emergency_worker.js");
+        }
+        worker.onmessage=function(event){
+            document.getElementById("workerOutput").value=event.data;
+        };
+    }else{
+        alert("Web Worker not supported.");
+    }
+}
+
+function stopWorker(){
+    worker.terminate();
+    worker=undefined;
+}
+</script>
+
+</body>
+</html>
