@@ -1,5 +1,4 @@
 let i = 0;
-
 function countNumbers(){
     i++;
     postMessage(i);
