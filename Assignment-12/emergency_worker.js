@@ -4,5 +4,4 @@ function countNumbers(){
     postMessage(i);
     setTimeout(countNumbers, 500);
 }
-
 countNumbers();
