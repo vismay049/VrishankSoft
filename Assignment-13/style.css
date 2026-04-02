@@ -68,7 +68,6 @@ p {
 p.highlight {
     color: #9a3412;
 }
-
 .card {
     background: #ffffff;
     padding: 25px;
@@ -77,12 +76,10 @@ p.highlight {
     box-shadow: 0 15px 35px rgba(0,0,0,0.07);
     transition: all 0.3s ease;
 }
-
 .card:hover {
     transform: translateY(-8px);
     box-shadow: 0 25px 45px rgba(0,0,0,0.12);
 }
-
 #achievements {
     background: #f0f9ff;
     padding: 25px;
@@ -90,7 +87,6 @@ p.highlight {
     margin-top: 40px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
-
 #contact {
     background: #ffffff;
     padding: 30px;
@@ -99,7 +95,6 @@ p.highlight {
     border: 1px solid #e2e8f0;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
 }
-
 footer {
     margin-top: 60px;
     padding: 20px;
