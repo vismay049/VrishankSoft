@@ -51,11 +51,9 @@ p {
     color: #475569;
     margin: 10px 0;
 }
-
 .center {
     text-align: center;
 }
-
 .highlight {
     background: #fff7ed;
     border-left: 5px solid #f97316;
@@ -64,7 +62,6 @@ p {
     font-weight: 600;
     box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
-
 p.highlight {
     color: #9a3412;
 }
