@@ -10,18 +10,15 @@ body {
     line-height: 1.8;
     color: #2c3e50;
 }
-
 h1, h2, h3 {
     letter-spacing: 0.8px;
 }
-
 h1 {
     color: #0f172a;
     font-size: 44px;
     font-weight: 700;
     margin-bottom: 30px;
 }
-
 h2 {
     color: #1e40af;
     font-size: 28px;
