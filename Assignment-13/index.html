@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Department Profile</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- =========================
+         INTERNAL CSS
+         ========================= -->
+    <style>
+        /* Redefining h1 color (Cascading Test) */
+        h1 {
+            color: green;  /* Overrides external blue */
+        }
+
+        /* Special Achievements Box */
+        #achievements {
+            border: 3px solid green;
+            padding: 15px;
+            background-color: #eafaf1;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Inline CSS (Highest Priority) -->
+    <h1 style="color: red;">
+        Computer Science & Engineering
+    </h1>
+    <!-- This will appear RED because Inline > Internal > External -->
+
+    <h3 class="center" style="color: orange;">
+        Admissions Open 2026
+    </h3>
+
+    <section>
+        <h2>About the Department</h2>
+        <p>
+            Established in 2005, the department offers UG and PG programs 
+            with modern infrastructure and experienced faculty.
+        </p>
+    </section>
+
+    <section>
+        <h2>Courses Offered</h2>
+        <ul>
+            <li>Data Structures</li>
+            <li>Web Technologies</li>
+            <li>Artificial Intelligence</li>
+            <li>Machine Learning</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Faculty Highlights</h2>
+
+        <div class="card">
+            <h3>Dr. A. Kumar – Professor</h3>
+            <p>Specialization in Artificial Intelligence and Data Science.</p>
+        </div>
+
+        <div class="card">
+            <h3>Ms. B. Rao – Assistant Professor</h3>
+            <p>Expert in Web Development and Cloud Computing.</p>
+        </div>
+
+    </section>
+
+    <section id="achievements">
+        <h2>Achievements</h2>
+        <p class="highlight">
+            100% Placement Record in 2025
+        </p>
+        <p>5 University Rank Holders</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <p>Email: cse@college.edu</p>
+        <p>Phone: 9876543210</p>
+    </section>
+
+    <footer class="center" style="margin-top:20px;">
+        <p>© 2026 Computer Science Department</p>
+    </footer>
+
+</body>
+</html>
