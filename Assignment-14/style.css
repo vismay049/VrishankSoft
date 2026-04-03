@@ -31,31 +31,26 @@ padding:80px 20px;
 font-size:48px;
 color:#66BB6A;
 }
-
 .banner p{
 margin-top:15px;
 font-size:18px;
 color:rgb(200,255,200);
 }
-
 /* About Section */
 .about{
 background-color:rgb(230,255,230);
 }
-
 /* Services Section */
 .services{
 background-color:rgb(140, 221, 176);
 color:white;
 }
-
 .card-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
 margin-top:30px;
 }
-
 .card{
 background-color:white;
 padding:20px;
@@ -65,7 +60,7 @@ color:SlateBlue;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
 transition:0.3s;
 }
-
+]
 .card:hover{
 transform:translateY(-5px);
 }
