@@ -69,7 +69,6 @@ transform:translateY(-5px);
 .product{
 background-color:hsl(140,50%,90%);
 }
-
 .product-card{
 background-color:#ffffff;
 padding:30px;
@@ -79,12 +78,10 @@ border:3px solid #2E7D32;
 border-radius:10px;
 width:300px; /* comment in middle of property */
 }
-
 /* Testimonials Section */
 .testimonials{
 background-color:#F1F8E9;
 }
-
 .testimonial-card{
 background-color:rgba(76,175,80,0.2);
 padding:25px;
@@ -93,12 +90,10 @@ margin:30px auto 0 auto;
 border-radius:10px;
 font-style:italic;
 }
-
 /* Contact Section */
 .contact{
 background-color:hsla(120,60%,85%,0.7);
 }
-
 /* Footer */
 footer{
 background-color:#1a1a1a;
